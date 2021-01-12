@@ -103,7 +103,8 @@ if __name__ == "__main__":
         .appName("KafkaSparkStructuredStreaming") \
         .config("spark.ui.port", 3000) \
         .getOrCreate()
-
+    
+    spark.sparkContext.setLogLevel('WARN')
     logger.info("Spark started")
 
     run_spark_job(spark)
